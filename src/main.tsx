@@ -10,19 +10,19 @@ import Reasigna from "./views/Reasigna";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/bss-atenciones/",
     element: <App />,
     children: [
       {
-        path: "",
+        path: "/bss-atenciones/",
         element: <Index />,
       },
       {
-        path: "ni",
+        path: "/bss-atenciones/ni",
         element: <NetworkIncident />,
       },
       {
-        path: "reasigna",
+        path: "/bss-atenciones/reasigna",
         element: <Reasigna />,
       },
     ],
@@ -34,4 +34,3 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-
