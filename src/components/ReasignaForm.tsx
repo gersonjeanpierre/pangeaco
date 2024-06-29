@@ -52,8 +52,7 @@ const ReasignaForm = () => {
     if (id === "borne" && parseInt(value) < 10) {
       setFormState((prevState) => ({ ...prevState, [id]: "0" + value }));
       return;
-    }
-    setFormState((prevState) => ({ ...prevState, [id]: value }));
+    } else setFormState((prevState) => ({ ...prevState, [id]: value }));
   };
 
   const handleGestor = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,11 +98,13 @@ const ReasignaForm = () => {
     ];
     console.log("data", data);
 
-    setTextWsp(`Orden:   ${formState.orden}
+    setTextWsp(
+      `Orden:  ${formState.orden}
 LineID:  ${formState.lineId}
 CTO:     ${formState.ctoFinal}
 Divisor: ${formState.divisor}
-Borne:   ${formState.borne}`);
+Borne:   ${formState.borne}`
+    );
     setIsReasigna(true);
   };
 
@@ -139,12 +140,13 @@ Borne:   ${formState.borne}`);
       timeOpen: "",
       dateClosed: "",
       timeClosed: "",
-      gestor: "",
+      gestor: gestor,
       timeResponse: "",
       nodo: "",
       comentario: "",
     });
     setTextWsp("");
+    setIsReasigna(false);
   };
 
   const btnCopyToWsp = () => {
