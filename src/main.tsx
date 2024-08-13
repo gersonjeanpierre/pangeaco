@@ -7,22 +7,28 @@ import App from "./App";
 import NetworkIncident from "./views/NetworkIncident";
 import Index from "./views/Index";
 import Reasigna from "./views/Reasigna";
+import Timbrado from "./views/Timbrado";
+const repo = "pangeaco";
 
 const router = createBrowserRouter([
   {
-    path: "/bss-atenciones/",
+    path: `/${repo}`,
     element: <App />,
     children: [
       {
-        path: "/bss-atenciones/",
+        path: `/${repo}`,
         element: <Index />,
       },
       {
-        path: "/bss-atenciones/ni",
+        path: `/${repo}/timbrados`,
+        element: <Timbrado />,
+      },
+      {
+        path: `/${repo}/ni`,
         element: <NetworkIncident />,
       },
       {
-        path: "/bss-atenciones/reasigna",
+        path: `/${repo}/reasignacion`,
         element: <Reasigna />,
       },
     ],
